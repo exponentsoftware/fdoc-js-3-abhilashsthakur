@@ -1,4 +1,4 @@
-const product = [
+const products = [
     {
         _id: 'eedfcf',
         name: 'mobile phone',
@@ -27,30 +27,36 @@ const product = [
         likes: ['fg12cy']
     }
 ]
-function likeProduct(product,newRate,myKey){
 
-    // Finding the product from the given list
-    const index=product.findIndex(value=>value.name===newRate.name);
-    
-    if(index===-1) return 'product not listed';
+function Review(products, newReview) {
+    const index = products.findIndex(value => value.name === newReview.name)
+    if (index === -1)
+        return 'Invalid Product'
 
-    else{
-        // const myKey="likes"
-         myKey=product[index][myKey];
+    else {
 
-        // checking if user already rated the product or not
-        const userId=myKey.findIndex(likes=>likes.userId===newRate.userId);
-        
-        if(userId===-1) return myKey.concat(newRate.userId);
+        const productLike = products[index]["likes"]
 
-        else return 'already liked';
-         
+        console.log(" prod : ", productLike)
+
+        const isUserId = productLike.findIndex(value => value === newReview.userId )
+        // return isUserId
+            if(isUserId===-1){
+
+            const pro=productLike.concat(newReview.userId)
+            console.log("pro : ", pro)
+
+            }
+            else{ return 'user Matched'}
+
     }
+
 }
-const newRate={
-    userId:'fg12c',
-    name: 'TV'
-    
+
+const newReview = {
+    name: 'TV',
+    description: 'Smart TV:Procaster',
+    price: 400,
+    userId: 'fg12cy',
 }
-// console.log(likeProduct(product,newRate,"likes"))
-console.log(likeProduc(product,newRate,"ratings"))
+console.log(Review(products, newReview))
