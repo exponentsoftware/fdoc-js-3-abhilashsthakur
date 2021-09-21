@@ -53,4 +53,4 @@ const newRate={
     
 }
 // console.log(likeProduct(product,newRate,"likes"))
-console.log(likeProduct(product,newRate,"ratings"))
+console.log(likeProduc(product,newRate,"ratings"))
