@@ -9,9 +9,9 @@ function arrayToObject(students){
 
 const objArray = students.map (student => Object.assign({} , student));
 
-const toObject=objArray.map((item)=>( { ["name"] : item[0] , ["skills"] : item[1] , ["level"] : item[2] } ));
+const toObj=objArray.map((item)=>( { ["name"] : item[0] , ["skills"] : item[1] , ["level"] : item[2] } ));
 
-return toObject
+return toObj
 
 }
 
