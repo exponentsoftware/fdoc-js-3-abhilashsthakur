@@ -37,15 +37,13 @@ function Review(products, newReview) {
 
         const productLike = products[index]["likes"]
 
-        console.log(" prod : ", productLike)
-
         const isUserId = productLike.findIndex(value => value === newReview.userId )
-        // return isUserId
+    
             if(isUserId===-1){
 
-            const pro=productLike.concat(newReview.userId)
-            console.log("pro : ", pro)
-
+            const likes=productLike.concat(newReview.userId)
+            
+                return {likes}
             }
             else{ return 'user Matched'}
 
@@ -57,6 +55,6 @@ const newReview = {
     name: 'TV',
     description: 'Smart TV:Procaster',
     price: 400,
-    userId: 'fg12cy',
+    userId: 'fg12c',
 }
 console.log(Review(products, newReview))

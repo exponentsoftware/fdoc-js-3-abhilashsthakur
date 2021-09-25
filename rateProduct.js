@@ -45,7 +45,7 @@ function Review(products, newReview) {
           
             const rate= Ratings.map(value => Object.values(value)[1]) //creating array with rate value
           
-            const totalRateing=rate.reduce((prev,curr,rate)=>prev+curr) 
+            const totalRateing=rate.reduce((prev,curr)=>prev+curr) 
           
             const average=totalRateing/rate.length 
 
